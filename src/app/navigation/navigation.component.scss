@@ -1,0 +1,104 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+//-------- Estilos IPS   ---------
+//menu
+.sidenav{
+  width: 235px;
+  background-color: #0062AD; 
+  border: 0;   
+}
+
+// ajuste imagen menu
+.toolbarmenu{
+  height: 205px;
+  padding: 0;    
+}
+
+//lista menu
+a.mdc-list-item {
+  padding: 0 7px;
+}
+
+//iconos lista menu
+.iconmenu{
+  padding-right: 10px;
+}
+
+.navbar0{
+  display: flex;
+  flex-flow: column nowrap;
+  height: 125px;
+  width: 100vw;
+}
+.navbar1{
+  height: 125px;
+  background: linear-gradient(90deg, rgba(0, 98, 173, 1) 0%, rgba(255, 30, 50, 1) 100%);
+
+  padding: 0;
+}
+.navbar1text{
+  display: flex;  
+  flex-flow: column nowrap;    
+  padding:7px 30px 0;
+}
+
+.navbar2{
+  display: flex;
+  justify-content: right;  
+  height: 35px;
+  background: #002F51;
+  width: 100%;
+
+  align-items: center;
+  }
+.navbar2text{
+  display: flex;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 21px;
+  letter-spacing: 0em;
+  padding-right: 40px;
+  align-items: center;
+}
+
+.username{
+  padding-right: 10px;
+}
+.login-icon{
+  padding-left: 10px;
+}
+
+.span1{
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;  
+}
+
+.span2{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}

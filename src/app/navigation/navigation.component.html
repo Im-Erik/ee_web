@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="toolbarmenu">      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/IPS.png/662px-IPS.png" alt="imagen ips gobierno" width="235px" height="auto">             
+    </mat-toolbar>
+    <mat-nav-list>     
+      <a mat-list-item href="#"><mat-icon class="iconmenu">home</mat-icon>Inicio</a>
+      <a mat-list-item href="#"><mat-icon class="iconmenu">sync_alt</mat-icon>Control de expedientes</a>
+      <a mat-list-item href="#"><mat-icon class="iconmenu">group</mat-icon>Expediente electrónico</a>
+      <a mat-list-item href="#"><mat-icon class="iconmenu">system_update_alt</mat-icon>Planes de actualización</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="navbar1">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <div class="navbar0">
+        <div class="navbar2">
+          <div class="navbar2text">
+            <mat-icon class="username">group</mat-icon>Nombre Apellido <mat-icon class="login-icon">login</mat-icon>
+          </div>
+        </div>  
+              
+          <div class="navbar1text">
+            <span class="span1">Expediente Electronico</span>
+            <span class="span2">Instituto de Previsión Social / Chile Atiende</span>
+            <span class="span2">Expediente Electrónico</span>
+          </div>
+      </div>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-dashboard-control-de-expedientes></app-dashboard-control-de-expedientes>
+  </mat-sidenav-content>
+</mat-sidenav-container>
