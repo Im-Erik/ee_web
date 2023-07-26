@@ -1,25 +1,82 @@
-<div class="grid-container">
-  <!-- <h1 class="mat-h1">Dashboard</h1> -->
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <!-- <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu> -->
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-            <hr>
-          <div>Card Content Here</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div class="formulario"  style="margin:40px;padding: 20px; border:2px solid grey; border-radius: 15px">
+  <h1 style="color:#0062AD; font-size: 2rem">Control Expedientes electrónicos</h1>
+  <hr style="height: 5px; background-color:#0062AD; margin: 10px 0;">
+
+  <!--<hr>-->
+  <div class="panel-body">
+    <div class="example-box-wrapper">
+      <form>
+    <!--primera fila-->
+        <div class="form-group row pad-bot">
+          <div class="col-md-4">
+            <label for="rutbenef">RUT Beneficiario</label>
+            <!--<input class="form-control" type="text" (keyup)="formateaRut(''+rutbenef.value, rutbenef.id)" maxlength="12"-->
+            <input class="form-control" type="text" maxlength="12"
+                   id="rutbenef" name="rutbenef" #rutbenef placeholder="12.345.678-9"
+                   style="width: auto;margin-bottom: 0px;" title="Escribir RUN en con puntos y guión. 12.345.678-9">
+          </div>
+
+          <div class="col-md-4">
+            <label for="ruttutor">Tipo Causante (Select)</label>
+            <!--<input class="form-control" type="text" (keyup)="formateaRutTutor(ruttutor.value, ruttutor.id)" maxlength="12"-->
+            <input class="form-control" type="text" maxlength="12"
+                   id="ruttutor" name="ruttutor" #ruttutor placeholder="12.345.678-9"
+                   style="width: auto;margin-bottom: 0px;"  title="Escribir RUN en con puntos y guión. 12.345.678-9">
+          </div>
+
+          <div class="col-md-4">
+            <label for="fecsoldesde">Fecha Desde</label>
+            <div class="input-group date" id="fdesde">
+              <input type="date" class="form-control" id="fecsoldesde" name="fecsoldesde" #fecsoldesde
+                   (keydown)="false"/>
+            </div>
+          </div>
+        </div>
+<!-- segunda fila -->
+        <div class="form-group row pad-bot">
+          <div class="col-md-4">
+            <label for="rutbenef">RUT Causante Familiar</label>
+            <!--<input class="form-control" type="text" (keyup)="formateaRut(''+rutbenef.value, rutbenef.id)" maxlength="12"-->
+            <input class="form-control" type="text" maxlength="12"
+                   id="rutbenef" name="rutbenef" #rutbenef placeholder="12.345.678-9"
+                   style="width: auto;margin-bottom: 0px;" title="Escribir RUN en con puntos y guión. 12.345.678-9">
+          </div>
+
+          <div class="col-md-4">
+            <label for="rutbenef">Estado de Control (Select)</label>
+            <!--<input class="form-control" type="text" (keyup)="formateaRut(''+rutbenef.value, rutbenef.id)" maxlength="12"-->
+            <input class="form-control" type="text" maxlength="12"
+                   id="rutbenef" name="rutbenef" #rutbenef placeholder="12.345.678-9"
+                   style="width: auto;margin-bottom: 0px;" title="Escribir RUN en con puntos y guión. 12.345.678-9">
+          </div>
+
+          <div class="col-md-4">
+            <label for="fecsoldesde">Fecha Hasta</label>
+            <div class="input-group date" id="fdesde">
+              <input type="date" class="form-control" id="fecsoldesde" name="fecsoldesde" #fecsoldesde
+                   (keydown)="false"/>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-md-12">
+            <button class="btn btn-success" type="button" style="cursor: pointer;">Buscar</button>
+        </div>
+
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <!-- <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div> -->
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
 </div>

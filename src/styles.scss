@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
 
 
 // lista de menu: Color, tamaño, alineacion
@@ -16,5 +16,9 @@ span .mdc-list-item__primary-text{
     align-items: center;
   }
 
+  .mat-mdc-text-field-wrapper {
+    width: 100%;
+    border-radius: 25px;
+  }
 
 

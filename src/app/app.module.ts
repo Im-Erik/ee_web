@@ -14,6 +14,17 @@ import { MatListModule } from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardPagenofoundComponent } from './dashboard-pagenofound/dashboard-pagenofound.component';
+import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
+import { DashboardExpedienteElectronicoComponent } from './dashboard-expediente-electronico/dashboard-expediente-electronico.component';
+import { DashboardPlanesComponent } from './dashboard-planes/dashboard-planes.component';
 
 
 
@@ -22,7 +33,12 @@ import {MatMenuModule} from '@angular/material/menu';
   declarations: [
     AppComponent,
     NavigationComponent,
-    DashboardControlDeExpedientesComponent
+    DashboardControlDeExpedientesComponent,
+    DashboardPagenofoundComponent,
+    DashboardHomeComponent,
+    DashboardExpedienteElectronicoComponent,
+    DashboardPlanesComponent
+
       ],
   imports: [
     BrowserModule,
@@ -35,7 +51,13 @@ import {MatMenuModule} from '@angular/material/menu';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

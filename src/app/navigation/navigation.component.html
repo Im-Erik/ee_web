@@ -7,10 +7,10 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/IPS.png/662px-IPS.png" alt="imagen ips gobierno" width="235px" height="auto">             
     </mat-toolbar>
     <mat-nav-list>     
-      <a mat-list-item href="#"><mat-icon class="iconmenu">home</mat-icon>Inicio</a>
-      <a mat-list-item href="#"><mat-icon class="iconmenu">sync_alt</mat-icon>Control de expedientes</a>
-      <a mat-list-item href="#"><mat-icon class="iconmenu">group</mat-icon>Expediente electrónico</a>
-      <a mat-list-item href="#"><mat-icon class="iconmenu">system_update_alt</mat-icon>Planes de actualización</a>
+      <a mat-list-item routerLink="home" routerLinkActive="active"><mat-icon class="iconmenu">home</mat-icon>Inicio</a>
+      <a mat-list-item routerLink="control" routerLinkActive="active"><mat-icon class="iconmenu">sync_alt</mat-icon>Control de expedientes</a>
+      <a mat-list-item routerLink="expediente" routerLinkActive="active"><mat-icon class="iconmenu">group</mat-icon>Expediente electrónico</a>
+      <a mat-list-item routerLink="planes" routerLinkActive="active"><mat-icon class="iconmenu">system_update_alt</mat-icon>Planes de actualización</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -24,7 +24,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <div class="navbar0">
+      <div class="navbar0 mat-elevation-z5">
         <div class="navbar2">
           <div class="navbar2text">
             <mat-icon class="username">group</mat-icon>Nombre Apellido <mat-icon class="login-icon">login</mat-icon>
@@ -40,6 +40,9 @@
 
     </mat-toolbar>
     <!-- Add Content Here -->
-    <app-dashboard-control-de-expedientes></app-dashboard-control-de-expedientes>
+    <!-- <app-dashboard-control-de-expedientes></app-dashboard-control-de-expedientes> -->
+    
+  <!-- <app-dashboard-home></app-dashboard-home> -->
+  <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

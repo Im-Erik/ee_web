@@ -1,3 +1,5 @@
+
+
 .sidenav-container {
   height: 100%;
 }
@@ -49,7 +51,6 @@ a.mdc-list-item {
 .navbar1{
   height: 125px;
   background: linear-gradient(90deg, rgba(0, 98, 173, 1) 0%, rgba(255, 30, 50, 1) 100%);
-
   padding: 0;
 }
 .navbar1text{
@@ -64,9 +65,9 @@ a.mdc-list-item {
   height: 35px;
   background: #002F51;
   width: 100%;
-
   align-items: center;
   }
+  
 .navbar2text{
   display: flex;
   font-family: Roboto;
@@ -101,4 +102,9 @@ a.mdc-list-item {
   line-height: 19px;
   letter-spacing: 0em;
   text-align: left;
+}
+
+.active{  
+  background-color:#D1E2FF;
+  
 }
