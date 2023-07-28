@@ -1,6 +1,42 @@
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+  estado: string;
+  fechsolicitud: string;
+  ver: string;
+  expediente: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 2, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 3, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 4, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 5, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 6, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 7, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 8, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 9, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 10, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 11, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 12, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 13, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 14, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 15, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 16, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 17, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+  {position: 18, name: 'Hydrogen', weight: 1.0079, symbol: 'H', estado: 'ingresado', fechsolicitud: '01/01/2023', ver: 'ver', expediente: 'expediente'},
+   
+
+];
 
 
 @Component({
@@ -9,6 +45,17 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./dashboard-control-de-expedientes.component.scss'],  
 })
 export class DashboardControlDeExpedientesComponent {
+
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'estado', 'fechsolicitud', 'ver', 'expediente'];
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  // enlaza paginacion
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+  // fin enlace paginacion
+
   private breakpointObserver = inject(BreakpointObserver);
   rut!:any;
   

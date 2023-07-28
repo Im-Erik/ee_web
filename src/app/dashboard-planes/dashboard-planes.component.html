@@ -76,6 +76,84 @@
             </div>
           </div>
         </form>
+
+      <!---Tabla--->
+      <h2 style="color:#0062AD">Listado de Planes de actualización</h2>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+
+        <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="fechadesde">
+          <th mat-header-cell *matHeaderCellDef> Fecha Desde </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechadesde}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="fechahasta">
+          <th mat-header-cell *matHeaderCellDef> Fecha Hasta </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechahasta}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="tiposolicitud">
+          <th mat-header-cell *matHeaderCellDef> Tipo Solicitud </th>
+          <td mat-cell *matCellDef="let element"> {{element.tiposolicitud}} </td>
+        </ng-container>
+
+        <!-- Estado Column -->
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+        </ng-container>
+
+        <!-- Fecha Solicitud Column -->
+        <ng-container matColumnDef="fechaejecucion">
+          <th mat-header-cell *matHeaderCellDef> Fecha Ejecución </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaejecucion}} </td>
+        </ng-container>
+
+        <!-- Ver Column -->
+        <ng-container matColumnDef="horaejecucion">
+          <th mat-header-cell *matHeaderCellDef> Hora Ejecución </th>
+          <td mat-cell *matCellDef="let element"> {{element.horaejecucion}} </td>
+        </ng-container>
+
+        <!-- Expediente Column -->
+        <ng-container matColumnDef="cantidad">
+          <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+          <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ejecutar">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let element" class="azul"><mat-icon class="iconmenu">arrow_right</mat-icon> {{element.ejecutar}} </td>
+        </ng-container>  
+
+        <ng-container matColumnDef="verlupa">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element" class="azul"><mat-icon class="iconmenu">search</mat-icon> {{element.verlupa}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Excluir">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let element" class="rojo"><mat-icon class="iconmenu">delete</mat-icon> {{element.Excluir}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      <br>
+      <mat-paginator [pageSizeOptions]="[7, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
   
       </div>
     </div>

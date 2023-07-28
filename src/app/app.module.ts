@@ -25,6 +25,9 @@ import { DashboardPagenofoundComponent } from './dashboard-pagenofound/dashboard
 import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
 import { DashboardExpedienteElectronicoComponent } from './dashboard-expediente-electronico/dashboard-expediente-electronico.component';
 import { DashboardPlanesComponent } from './dashboard-planes/dashboard-planes.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 
@@ -37,7 +40,8 @@ import { DashboardPlanesComponent } from './dashboard-planes/dashboard-planes.co
     DashboardPagenofoundComponent,
     DashboardHomeComponent,
     DashboardExpedienteElectronicoComponent,
-    DashboardPlanesComponent
+    DashboardPlanesComponent,
+    
 
       ],
   imports: [
@@ -57,7 +61,9 @@ import { DashboardPlanesComponent } from './dashboard-planes/dashboard-planes.co
     MatSelectModule,
     MatDatepickerModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
